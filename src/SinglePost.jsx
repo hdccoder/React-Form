@@ -15,7 +15,7 @@ if (!post){
 
     return (
    
-   <div>
+   <div className="spost">
 
     <h1>{post.body}</h1>
     <Link to='/posts'> Return to All Post</Link>

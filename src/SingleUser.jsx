@@ -16,7 +16,7 @@ if(!user){
 
 return (
 
-<div>
+<div className="suser">
     <h1>{user.name} <br></br>{user.username}
     {user.website}<br></br>{user.company.name}
     <br></br>{user.phone}</h1>

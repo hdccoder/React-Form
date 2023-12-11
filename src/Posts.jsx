@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Posts= ({posts}) => {
     return (
-      <div>
+      <div className="theposts">
         <h1>Posts</h1>
         <ul>
           {

@@ -2,11 +2,14 @@
 
 const Home = () => {
     return (
-      <div>
+    
+      <div className="Welcome">
+       
         <h1>Welcome!!!</h1>
       
       
       </div>
+   
     )
   }
 
