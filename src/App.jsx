@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useLocation, Routes, Route} from 'react-router-dom'
+import Home from './Home'
+import Users from './Users'
+import Posts from './Posts'
+import SingleUser from './SingleUser'
+import SinglePost from './SinglePost'
 import './App.css'
 
 function App() {
@@ -10,35 +15,6 @@ function App() {
   const location = useLocation()
   const {pathname} = location
 
-  const Home = () => {
-    return (
-      <div><h1>Welcome!!!</h1></div>
-    )
-  }
-
-  const Users = ({users}) => {
-    return (
-      <div>
-        <h1>Users</h1>
-        <ul>
-          {
-            users.map((user) => {
-              return (
-                <li>{user.name}</li>
-              )
-            })
-          }
-        </ul>
-      </div>
-    )
-  }
-
-  const Posts= () => {
-    return (
-      <div><h1>Wassup!!!</h1></div>
-    )
-  }
- 
 
   useEffect (() => {
     const fetchUsers = async () => {
@@ -69,7 +45,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/users' element={<Users users={users}/>}/>
-      <Route path='/posts' element={<Posts/>}/>
+      <Route path='/users/:id' element={<SingleUser users={users}/>}/>
+      <Route path='/posts' element={<Posts posts={posts}/>}/>
+      <Route path='/posts/:id' element={<SinglePost posts={posts}/>}/>
     </Routes>
 
 
